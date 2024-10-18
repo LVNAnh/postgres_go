@@ -14,7 +14,7 @@ func main() {
 
 	config.ConnectRedis()
 
-	err := config.DB.AutoMigrate(&Models.User{})
+	err := config.DB.AutoMigrate(&Models.User{}, &Models.CreditCard{})
 	if err != nil {
 		log.Fatalf("Failed to migrate database: %v", err)
 	}
